@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Toolkit Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome</h1>
+    <div class="tabs">
+      <div class="tab active" onclick="setActiveTab(this)">Recent</div>
+      <div class="tab" onclick="setActiveTab(this)">Starred</div>
+      <div class="tab" onclick="setActiveTab(this)">On device</div>
+    </div>
+  </header>  <main id="tools">
+    <!-- Tools will be loaded here -->
+  </main>  <div class="fab" onclick="toggleFabMenu()">+</div>
+  <div id="fabMenu" class="fab-menu hidden">
+    <button onclick="showTool('text')">📝 Create PDF</button>
+    <button onclick="showTool('image')">🖼️ Image to PDF</button>
+    <button onclick="showTool('merge')">📎 Merge PDF</button>
+    <button onclick="showTool('edit')">✏️ Edit PDF</button>
+    <button onclick="showTool('view')">📄 View PDF</button>
+  </div>  <div class="bottom-nav">
+    <a href="#" class="active" onclick="showTool('text')">🏠<br>Home</a>
+    <a href="#" onclick="showTool('files')">📄<br>Files</a>
+    <a href="#" onclick="alert('Shared screen coming soon')">👥<br>Shared</a>
+    <a href="#" onclick="alert('Search coming soon')">🔍<br>Search</a>
+  </div>  <footer>
+    <p>Made by Varun • Open Source</p>
+  </footer>  <script src="script.js"></script>  <script>
+    function setActiveTab(el) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script></body>
+  </html>
